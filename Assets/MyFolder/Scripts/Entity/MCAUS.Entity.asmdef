@@ -1,0 +1,16 @@
+{
+    "name": "MCAUS.Entity",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3aa5f408cf1eef7498992bc1755db936"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

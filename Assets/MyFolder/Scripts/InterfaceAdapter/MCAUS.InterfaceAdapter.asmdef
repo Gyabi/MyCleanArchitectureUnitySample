@@ -1,0 +1,20 @@
+{
+    "name": "MCAUS.InterfaceAdapter",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d786343e10d7da449b8b154503cc0a2c",
+        "GUID:7090c16fc94fbcf4bab118fafef4ef22",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:531d88b4a7efd7b4f812b41580b4dbe1",
+        "GUID:3aa5f408cf1eef7498992bc1755db936"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

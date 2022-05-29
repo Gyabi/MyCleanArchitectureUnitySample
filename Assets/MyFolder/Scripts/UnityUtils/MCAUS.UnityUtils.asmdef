@@ -1,0 +1,16 @@
+{
+    "name": "MCAUS.UnityUtils",
+    "rootNamespace": "",
+    "references": [
+        "GUID:531d88b4a7efd7b4f812b41580b4dbe1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
