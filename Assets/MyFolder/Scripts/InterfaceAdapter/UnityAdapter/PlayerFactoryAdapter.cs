@@ -1,3 +1,4 @@
+using UnityEngine;
 public class PlayerFactoryAdapter : IPlayerFactoryAdapter
 {
     private MyPrefabFactory _prefabFactory;
@@ -6,9 +7,9 @@ public class PlayerFactoryAdapter : IPlayerFactoryAdapter
         this._prefabFactory = prefabFactory;
     }
 
-    public void CreatePlayer()
+    public Player CreatePlayer()
     {
-        _prefabFactory.CreatePlayer();
-        
+        GameObject obj = _prefabFactory.CreatePlayer();
+        return new Player(obj);
     }
 }

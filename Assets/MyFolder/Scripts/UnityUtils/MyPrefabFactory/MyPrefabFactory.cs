@@ -13,9 +13,10 @@ public class MyPrefabFactory : MonoBehaviour
 
     private List<GameObject> _blocks = new List<GameObject>();
 
-    public void CreatePlayer()
+    public GameObject CreatePlayer()
     {
-        Instantiate(_playerPrefab, _playerSpawnPoint.transform.position, Quaternion.identity);
+        GameObject obj = Instantiate(_playerPrefab, _playerSpawnPoint.transform.position, Quaternion.identity);
+        return obj;
     }
 
     public void CreateBlock(BlockPoint point)
