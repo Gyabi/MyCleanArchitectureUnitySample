@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-public class OfflineMainSceneStart : MonoBehaviour
+public class OnlineMainSceneStart : MonoBehaviour
 {
     private MapUseCase _mapUseCase;
     private PlayerUseCase _playerUseCase;
@@ -42,7 +42,7 @@ public class OfflineMainSceneStart : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        // this._playerUseCase.FixedUpdate();
+        this._playerUseCase.FixedUpdate();
     }
 
 }
