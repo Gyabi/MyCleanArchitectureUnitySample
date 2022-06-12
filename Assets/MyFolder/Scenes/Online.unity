@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 60179809}
   - component: {fileID: 60179808}
   m_Layer: 0
-  m_Name: OfflineMainSceneStart
+  m_Name: OnlineMainSceneStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-public class MainSceneInstaller : MonoInstaller
+public class OnlineMainSceneInstaller : MonoInstaller
 {
     [SerializeField]
     private MyPrefabFactory _prefabFactory;
@@ -14,9 +14,16 @@ public class MainSceneInstaller : MonoInstaller
     public override void InstallBindings()
     {
         // Mapユースケース
+        #region MapUseCase
+        // UseCase本体
+        Container.Bind<IMapUseCase>().To<MapUseCase>().AsSingle();
+        // マップ生成関連
         Container.Bind<IMapCreateAdapter>().FromInstance(new MapCreateAdapter(_randomMapMaker)).AsCached();
+        #endregion
 
         #region PlayerUseCase
+        // UseCase本体
+        Container.Bind<IPlayerUseCase>().To<OnlinePlayerUseCase>().AsCached();
         // Player生成
         Container.Bind<IPlayerFactoryAdapter>().FromInstance(new PlayerFactoryAdapter(_prefabFactory)).AsCached();
         // ブロック生成関連

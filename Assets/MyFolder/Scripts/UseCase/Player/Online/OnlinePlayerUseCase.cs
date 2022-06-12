@@ -1,18 +1,28 @@
 using UniRx;
-public class PlayerUseCase
+using Zenject;
+public class OnlinePlayerUseCase : IPlayerUseCase
 {
     #region DI Objects
     // Player生成関連
+    [Inject]
     private IPlayerFactoryAdapter _playerFactoryAdapter;
     // ブロック操作関連
+    [Inject]
     private IBlockModeController _blockModeConroller;
+    [Inject]
     private IBlockCreateController _blockCreateController;
+    [Inject]
     private IBlockDestroyController _blockDestroyController;
+    [Inject]
     private IBlockCreateAdapter _blockCreateAdapter;
+    [Inject]
     private IBlockDestroyAdapter _blockDestroyAdapter;
+    [Inject]
     private IBlockCreatePresetner _blockCreatePresetner;
+    [Inject]
     private IBlockResourcePresenter _blockResourcePresenter;
     // 通信関連
+    [Inject]
     private IPlayerServerSendAdapter _playerServerSendAdapter;
     #endregion
 
@@ -25,18 +35,8 @@ public class PlayerUseCase
     private Player _player;
     #endregion
 
-    public PlayerUseCase(IBlockModeController blockModeConroller, IBlockResourcePresenter blockResourcePresenter, IBlockDestroyAdapter blockDestroyAdapter, IBlockCreateAdapter blockCreateAdapter, IPlayerFactoryAdapter playerFactoryAdapter, IBlockCreateController blockCreateController, IBlockDestroyController blockDestroyController, IBlockCreatePresetner blockCreatePresetner, IPlayerServerSendAdapter playerServerSendAdapter)
+    public OnlinePlayerUseCase()
     {
-        this._blockModeConroller = blockModeConroller;
-        this._blockResourcePresenter = blockResourcePresenter;
-        this._blockDestroyAdapter = blockDestroyAdapter;
-        this._blockCreateAdapter = blockCreateAdapter;
-        this._playerFactoryAdapter = playerFactoryAdapter;
-        this._blockCreateController = blockCreateController;
-        this._blockDestroyController = blockDestroyController;
-        this._blockCreatePresetner = blockCreatePresetner;
-        this._playerServerSendAdapter = playerServerSendAdapter;
-
         this._playerState = new PlayerState();
     }
 
