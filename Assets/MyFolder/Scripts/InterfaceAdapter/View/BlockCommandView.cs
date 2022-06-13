@@ -65,12 +65,14 @@ public class BlockCommandView : MonoBehaviour, IBlockCreateView, IBlockModeView,
         // 適切な位置に表示を出して
         if(_isDrawCreateUI)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit = new RaycastHit();
-            if(Physics.Raycast(ray, out hit, Mathf.Infinity, _layerMask))
-            {
-                // オブジェクトとhit.pointの位置関係から、ブロックの位置を決める                
-                _blockCreateUI.transform.localPosition = hit.transform.position + hit.normal;
+            if(Camera.main != null){
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit = new RaycastHit();
+                if(Physics.Raycast(ray, out hit, Mathf.Infinity, _layerMask))
+                {
+                    // オブジェクトとhit.pointの位置関係から、ブロックの位置を決める                
+                    _blockCreateUI.transform.localPosition = hit.transform.position + hit.normal;
+                }
             }
         }
 

@@ -45,9 +45,17 @@ public class OnlinePlayerUseCase : IPlayerUseCase
     /// </summary> 
     public void Init()
     {
-        // プレイヤー生成
-        this._player = this._playerFactoryAdapter.CreatePlayer();
+        // プレイヤー生成通知を購読
+        this._playerServerSendAdapter.OnPlayerCreateSubject.Subscribe(
+            (int playerId) =>
+            {
+                // プレイヤー生成
+                this._player = this._playerFactoryAdapter.CreatePlayer(playerId);
+        });
 
+        // サーバに接続要求
+        this._playerServerSendAdapter.connection();
+        
         // 各入力の購読
         // ブロック生成命令
         this._blockCreateController.OnBlockCreateSubject.Subscribe(point =>
@@ -85,7 +93,11 @@ public class OnlinePlayerUseCase : IPlayerUseCase
 
     public void FixedUpdate()
     {
-        // プレイヤーの座標を送信する
-        this._playerServerSendAdapter.Send(new SendPacket(this._player,SendBlockActions.None));
+        // Todo:WebSocketSharp-keyによる管理をやめてHTTPを最初にかませることでこの処理を消す
+        if(this._player != null)
+        {
+            // プレイヤーの座標を送信する
+            this._playerServerSendAdapter.Send(new SendPacket(this._player,SendBlockActions.None));
+        }
     }
 }

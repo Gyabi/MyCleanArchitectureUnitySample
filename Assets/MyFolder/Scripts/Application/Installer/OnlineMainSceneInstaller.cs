@@ -11,6 +11,9 @@ public class OnlineMainSceneInstaller : MonoInstaller
 
     [SerializeField]
     private BlockCommandView _blockCommandView;
+
+    [SerializeField]
+    private WebSocketClient _webSocketClient;
     public override void InstallBindings()
     {
         // Mapユースケース
@@ -35,7 +38,8 @@ public class OnlineMainSceneInstaller : MonoInstaller
         Container.Bind<IBlockCreatePresetner>().FromInstance(new BlockCreatePresenter(_blockCommandView)).AsCached();
         Container.Bind<IBlockResourcePresenter>().To<BlockResoucePresenter>().AsCached();
         // 通信関連
-        Container.Bind<IPlayerServerSendAdapter>().FromInstance(new PlayerServerSendAdapterTest()).AsCached();
+        Container.Bind<IPlayerServerSendAdapter>().FromInstance(new PlayerServerSendAdapter(_webSocketClient)).AsCached();
+        // Container.Bind<IPlayerServerSendAdapter>().FromInstance(new PlayerServerSendAdapterTest()).AsCached();
         #endregion
     }
 }

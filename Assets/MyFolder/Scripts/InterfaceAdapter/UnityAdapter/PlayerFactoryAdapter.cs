@@ -7,9 +7,9 @@ public class PlayerFactoryAdapter : IPlayerFactoryAdapter
         this._prefabFactory = prefabFactory;
     }
 
-    public Player CreatePlayer()
+    public Player CreatePlayer(int id)
     {
         GameObject obj = _prefabFactory.CreatePlayer();
-        return new Player(obj);
+        return new Player(obj, id);
     }
 }

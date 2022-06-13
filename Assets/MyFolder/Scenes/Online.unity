@@ -304,6 +304,7 @@ MonoBehaviour:
   _prefabFactory: {fileID: 1066966412}
   _randomMapMaker: {fileID: 522100301}
   _blockCommandView: {fileID: 295542574}
+  _webSocketClient: {fileID: 559109978}
 --- !u!114 &335768912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,6 +411,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 559109977}
+  - component: {fileID: 559109978}
   m_Layer: 0
   m_Name: WebSocket
   m_TagString: Untagged
@@ -431,6 +433,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &559109978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559109976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf8e14b65c23ac46b436906e111bfe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &639919780
 GameObject:
   m_ObjectHideFlags: 0

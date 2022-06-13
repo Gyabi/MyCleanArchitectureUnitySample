@@ -43,7 +43,7 @@ public class OfflinePlayerUseCase : IPlayerUseCase
     public void Init()
     {
         // プレイヤー生成
-        this._player = this._playerFactoryAdapter.CreatePlayer();
+        this._player = this._playerFactoryAdapter.CreatePlayer(0);
 
         // 各入力の購読
         // ブロック生成命令

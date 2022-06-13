@@ -2,7 +2,8 @@
     "name": "MCAUS.UnityUtils",
     "rootNamespace": "",
     "references": [
-        "GUID:531d88b4a7efd7b4f812b41580b4dbe1"
+        "GUID:531d88b4a7efd7b4f812b41580b4dbe1",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

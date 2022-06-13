@@ -2,14 +2,14 @@ using UnityEngine;
 using System.Collections.Generic;
 public class Player
 {
-    public GameObject _obj;
     public static List<int> _ids = new List<int>();
+    public GameObject _obj;
     public int _id;
 
-    public Player(GameObject obj)
+    public Player(GameObject obj, int id)
     {
-        _obj = obj;
-        _id = _ids.Count;
-        _ids.Add(_id);
+        this._obj = obj;
+        this._id = id;
+        _ids.Add(id);
     }
 }
