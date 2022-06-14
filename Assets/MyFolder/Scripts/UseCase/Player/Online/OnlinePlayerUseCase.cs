@@ -46,11 +46,12 @@ public class OnlinePlayerUseCase : IPlayerUseCase
     public void Init()
     {
         // プレイヤー生成通知を購読
-        this._playerServerSendAdapter.OnPlayerCreateSubject.Subscribe(
-            (int playerId) =>
+        this._playerServerSendAdapter.OnPlayerCreateSubject.ObserveOnMainThread()
+        .Subscribe(
+            (int id) =>
             {
                 // プレイヤー生成
-                this._player = this._playerFactoryAdapter.CreatePlayer(playerId);
+                this._player = this._playerFactoryAdapter.CreatePlayer(id);
         });
 
         // サーバに接続要求

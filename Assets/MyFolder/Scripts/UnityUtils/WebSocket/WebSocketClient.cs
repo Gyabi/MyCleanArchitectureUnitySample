@@ -13,9 +13,7 @@ public class WebSocketClient : MonoBehaviour
         get { return _onPlayerCreateSubject; }
     }
 
-    bool _canCreatePlayer = false;
-    PacketJsonData _createPlayerPacket;
-
+    
     // string url = "ws://fastapi-websocket-server:8000/ws";
     string url = "ws://localhost:8000/ws";
     WebSocket webSocket;
@@ -36,8 +34,7 @@ public class WebSocketClient : MonoBehaviour
             // 初回通信か判定
             if(packetJsonData.connection_message)
             {
-                this._canCreatePlayer = true;
-                this._createPlayerPacket = packetJsonData;
+                OnPlayerCreateSubject.OnNext(packetJsonData.id);
             }
         };
         webSocket.OnError += (sender, e) =>
@@ -59,19 +56,6 @@ public class WebSocketClient : MonoBehaviour
         string json = JsonUtility.ToJson(packetJsonData);
         Debug.Log(json);
         webSocket.Send(json);
-    }
-
-    private void Update()
-    {
-        if(this._canCreatePlayer)
-        {
-            // プレイヤー生成通知(メッセージの受信が別スレッドなせいでnextを発火できない)
-            // https://befool.co.jp/blog/8823-scholar/unirx-from-event-args/
-            // 上記で解決できるかも。。。？
-            OnPlayerCreateSubject.OnNext(this._createPlayerPacket.id);
-            this._canCreatePlayer = false;
-            this._createPlayerPacket = null;
-        }
     }
 
     void OnDestroy()
