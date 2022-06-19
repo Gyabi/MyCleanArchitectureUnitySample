@@ -7,6 +7,8 @@ public class OnlineMainSceneStart : MonoBehaviour
     private IMapUseCase _mapUseCase;
     [Inject]
     private IPlayerUseCase _playerUseCase;
+    [Inject]
+    private IEnemyUseCase _enemyUseCase;
 
     void Start()
     {
@@ -14,6 +16,8 @@ public class OnlineMainSceneStart : MonoBehaviour
         _mapUseCase.Init();
         // プレイヤー作製、各動作購読
         _playerUseCase.Init();
+        // エネミー作製、各動作購読
+        _enemyUseCase.Init();
     }
 
     void Update()

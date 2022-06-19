@@ -41,5 +41,16 @@ public class OnlineMainSceneInstaller : MonoInstaller
         Container.Bind<IPlayerServerSendAdapter>().FromInstance(new PlayerServerSendAdapter(_webSocketClient)).AsCached();
         // Container.Bind<IPlayerServerSendAdapter>().FromInstance(new PlayerServerSendAdapterTest()).AsCached();
         #endregion
+
+        #region EnemyUseCase
+        // UseCase本体
+        Container.Bind<IEnemyUseCase>().To<EnemyUseCase>().AsCached();
+        // Enemy生成
+        Container.Bind<IEnemyFactoryAdapter>().FromInstance(new EnemyFactoryAdapter(_prefabFactory)).AsCached();
+        // オブジェクト位置変更
+        Container.Bind<IObjectTransformChangeAdapter>().FromInstance(new EnemyTransformAdapter()).AsCached();
+        // 通信関連
+        Container.Bind<IEnemyServerReceiveAdaper>().FromInstance(new EnemyServerReceiveAdapter(_webSocketClient)).AsCached();
+        #endregion
     }
 }

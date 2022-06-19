@@ -615,6 +615,7 @@ MonoBehaviour:
   _playerPrefab: {fileID: 8984303530253651199, guid: 7200280bbe2038e4b815160705a5e981, type: 3}
   _playerSpawnPoint: {fileID: 2350724}
   _blockPrefab: {fileID: 5011057849365019961, guid: fdcb11cf7a85255489e36773fc3cfb7a, type: 3}
+  _enemyPrefab: {fileID: 8984303530253651199, guid: eef44fecabe3a2e48be645747ffc7b8b, type: 3}
 --- !u!1 &1508792585
 GameObject:
   m_ObjectHideFlags: 0

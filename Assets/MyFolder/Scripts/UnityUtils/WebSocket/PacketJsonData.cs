@@ -5,6 +5,7 @@ using System;
 public class PacketJsonData
 {
     public bool connection_message;
+    public bool disconnection_message;
     public int id;
     public float position_x;
     public float position_y;
@@ -17,6 +18,7 @@ public class PacketJsonData
     public void  SetBySendPacket(SendPacket packet)
     {
         this.connection_message = false;
+        this.disconnection_message = false;
         this.id = packet.player._id;
         this.position_x = packet.player._obj.transform.position.x;
         this.position_y = packet.player._obj.transform.position.y;
@@ -24,5 +26,19 @@ public class PacketJsonData
         this.rotation_x = packet.player._obj.transform.rotation.x;
         this.rotation_y = packet.player._obj.transform.rotation.y;
         this.rotation_z = packet.player._obj.transform.rotation.z;
+    }
+
+    public ReceivePacket CreateReceivePacket()
+    {
+        return new ReceivePacket(
+            this.id,
+            this.disconnection_message,
+            this.position_x,
+            this.position_y,
+            this.position_z,
+            this.rotation_x,
+            this.rotation_y,
+            this.rotation_z
+        );
     }
 }
