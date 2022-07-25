@@ -92,13 +92,21 @@ public class OnlinePlayerUseCase : IPlayerUseCase
         });
     }
 
+    public float time=0.0f;
+
     public void FixedUpdate()
     {
-        // Todo:WebSocketSharp-keyによる管理をやめてHTTPを最初にかませることでこの処理を消す
-        if(this._player != null)
+        // 処理を軽くするために1hzで通信するようにする
+        if(this.time>=1.0f)
         {
-            // プレイヤーの座標を送信する
-            this._playerServerSendAdapter.Send(new SendPacket(this._player,SendBlockActions.None));
+            // TODO:WebSocketSharp-keyによる管理をやめてHTTPを最初にかませることでこの処理を消す
+            if(this._player != null)
+            {
+                // プレイヤーの座標を送信する
+                this._playerServerSendAdapter.Send(new SendPacket(this._player,SendBlockActions.None));
+            }
+            this.time=0.0f;
         }
+        this.time+=UnityEngine.Time.fixedDeltaTime;
     }
 }

@@ -27,7 +27,8 @@ public class WebSocketClient : MonoBehaviour
 
 
     // string url = "ws://fastapi-websocket-server:8000/ws";
-    string url = "ws://localhost:8000/ws";
+    // string url = "ws://localhost:8000/ws";
+    string url = "https://caserver-bmh7uhy6ia-an.a.run.app/ws";
     WebSocket webSocket;
     public void Connect()
     {
