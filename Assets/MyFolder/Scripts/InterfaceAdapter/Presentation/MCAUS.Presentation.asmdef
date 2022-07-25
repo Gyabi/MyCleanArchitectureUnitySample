@@ -1,8 +1,11 @@
 {
-    "name": "MCAUS.Application.Main",
+    "name": "MCAUS.Presentation",
     "rootNamespace": "",
     "references": [
-        "GUID:bee20758aab40df49bc9d6aadfa66b8e"
+        "GUID:531d88b4a7efd7b4f812b41580b4dbe1",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:ced0d3b41302ce34e853e79152427c89",
+        "GUID:f5e538e7cfff3a24bb1d37c08014ff42"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

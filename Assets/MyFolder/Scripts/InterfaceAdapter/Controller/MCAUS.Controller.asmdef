@@ -1,8 +1,11 @@
 {
-    "name": "MCAUS.Application.Main",
+    "name": "MCAUS.Controller",
     "rootNamespace": "",
     "references": [
-        "GUID:bee20758aab40df49bc9d6aadfa66b8e"
+        "GUID:ced0d3b41302ce34e853e79152427c89",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:98a0d69656bb5f14ca9c35017a29472d",
+        "GUID:531d88b4a7efd7b4f812b41580b4dbe1"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

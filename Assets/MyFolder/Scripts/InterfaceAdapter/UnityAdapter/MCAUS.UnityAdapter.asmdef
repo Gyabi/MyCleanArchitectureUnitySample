@@ -1,8 +1,11 @@
 {
-    "name": "MCAUS.Application.Main",
+    "name": "MCAUS.UnityAdapter",
     "rootNamespace": "",
     "references": [
-        "GUID:bee20758aab40df49bc9d6aadfa66b8e"
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:531d88b4a7efd7b4f812b41580b4dbe1",
+        "GUID:23ae0dd2825bdd14b9f2449ac14f9537",
+        "GUID:d786343e10d7da449b8b154503cc0a2c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
